@@ -1,0 +1,228 @@
+/* ===== Base & Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0fff4;
+    color: #2d3e40;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Glitter Text Effect ===== */
+.glitter {
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(
+        90deg,
+        #2ec4a0,
+        #7fffd4,
+        #ffffff,
+        #7fffd4,
+        #2ec4a0
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glitter-shift 3s linear infinite;
+    text-shadow: 0 0 10px rgba(127, 255, 212, 0.3);
+}
+
+@keyframes glitter-shift {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #1a3c34;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #a8f0dc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #7fffd4;
+    color: #1a3c34;
+}
+
+/* ===== Intro Section ===== */
+.intro {
+    text-align: center;
+    padding: 3rem 2rem 1.5rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.intro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #3a5a50;
+}
+
+/* ===== Menu Grid (Specials) ===== */
+.specials-grid,
+.drinks-grid {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.specials-grid h2,
+.drinks-grid h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* ===== Specials Card ===== */
+.menu-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(46, 196, 160, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(46, 196, 160, 0.25);
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #b2f5ea, #7fffd4, #a8f0dc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a3c34;
+    letter-spacing: 0.5px;
+}
+
+.special-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-info {
+    padding: 1.25rem 1.5rem;
+}
+
+.card-info h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.3rem;
+    color: #1a3c34;
+    margin-bottom: 0.75rem;
+}
+
+.card-info .ingredients,
+.card-info .inspiration {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    color: #4a6a60;
+}
+
+/* ===== Drinks List Cards ===== */
+.drink-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(46, 196, 160, 0.12);
+    border-left: 5px solid #7fffd4;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.drink-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 196, 160, 0.2);
+}
+
+.drink-card h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    color: #1a3c34;
+    margin-bottom: 0.5rem;
+}
+
+.drink-card .drink-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a6a60;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: auto;
+    background-color: #1a3c34;
+    text-align: center;
+    padding: 1.5rem;
+    color: #a8f0dc;
+}
+
+footer p:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+footer p:last-child {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro {
+        padding: 2rem 1.5rem 1rem;
+    }
+}
